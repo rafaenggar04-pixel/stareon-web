@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stareon Community - Before First Day</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #050816, #0b1a3a);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav {
+  background: #020617;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav h1 {
+  color: #3ea6ff;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #3ea6ff;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at top, #0b1a3a, #020617);
+  animation: fadeIn 2s ease;
+}
+
+.hero h2 {
+  font-size: 42px;
+  color: #3ea6ff;
+}
+
+.hero p {
+  margin-top: 15px;
+  max-width: 600px;
+  opacity: 0.9;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  background: #3ea6ff;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1c7ed6;
+  transform: scale(1.05);
+}
+
+/* SECTION */
+section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+section h3 {
+  color: #3ea6ff;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* CARD */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #020617;
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3s;
+  border: 1px solid #0b1a3a;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #3ea6ff;
+}
+
+/* MEMBER */
+.member {
+  background: #020617;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #0b1a3a;
+}
+
+/* FOOTER */
+footer {
+  background: #020617;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  opacity: 0.8;
+}
+
+/* ANIMASI */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>STAREON</h1>
+  <div>
+    <a href="#about">About</a>
+    <a href="#roleplay">Roleplay</a>
+    <a href="#member">Member</a>
+    <a href="#social">Social</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <h2>Before First Day</h2>
+    <p>
+      Series Roleplay Sekolah & Fight dari Stareon Community.
+      Dunia sekolah penuh misteri, pertarungan, dan cerita sebelum hari pertama dimulai.
+    </p>
+    <button class="btn" onclick="joinServer()">Join Server</button>
+    <button class="btn" onclick="joinGrup()" style="margin-left:10px;background:#5865F2;color:white;">
+      Join grup
+    </button>
+  </div>
+</div>
+
+<section id="about">
+  <h3>Tentang Stareon Community</h3>
+  <p>
+    Stareon Community adalah server Minecraft Roleplay bertema sekolah modern
+    dengan sistem fight, skill, dan cerita berkelanjutan.
+    Series utama kami: <b>Before First Day</b> – cerita sebelum murid
+    masuk sekolah, penuh konflik, pertempuran, dan misteri.
+  </p>
+</section>
+
+<section id="roleplay">
+  <h3>Roleplay Fight System</h3>
+  <div class="card-container">
+    <div class="card">
+      <h4>Skill Battle</h4>
+      <p>Pemain memiliki skill unik seperti api, dash, dan combo.</p>
+    </div>
+    <div class="card">
+      <h4>School Story</h4>
+      <p>Cerita sekolah berkembang setiap episode.</p>
+    </div>
+    <div class="card">
+      <h4>Faction War</h4>
+      <p>Perang antar geng sekolah menentukan ranking.</p>
+    </div>
+    <div class="card">
+      <h4>Ranking Player</h4>
+      <p>Leaderboard pemain terkuat dan terkaya.</p>
+    </div>
+  </div>
+</section>
+
+<section id="member">
+  <h3>Member Stareon</h3>
+  <div class="card-container">
+    <div class="member">Zeno Arkan</div>
+    <div class="member">Langit Atmaja</div>
+    <div class="member">Rayan Putra</div>
+    <div class="member">Rivani Hadiwijaya</div>
+    <div class="member">Huracane Wealer</div>
+    <div class="member">Yamazaki Alvin</div>
+  </div>
+</section>
+
+<section id="social">
+  <h3>Sosial Media Stareon</h3>
+  <div class="card-container">
+    <div class="card" onclick="openYT()">
+      <h4>YouTube</h4>
+      <p>Video series Before First Day & highlight fight.</p>
+    </div>
+    <div class="card" onclick="openTT()">
+      <h4>TikTok</h4>
+      <p>Clip battle pendek dan funny moment.</p>
+    </div>
+    <div class="card" onclick="openIG()">
+      <h4>Instagram</h4>
+      <p>Poster episode dan info event.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Stareon Community - Before First Day Series
+</footer>
+
+<script>
+function joinServer(){
+  alert("IP Server: stareon.my.id PORT server: 22128");
+}
+
+function joinGrup(){
+  window.open("https://discord.gg/6ydpTkhEa");
+}
+
+function openYT(){
+  window.open("https://youtube.com/@STAREONMC");
+}
+
+function openTT(){
+  window.open("https://tiktok.com/@stareon.mc");
+}
+
+function openIG(){
+  window.open("https://instagram.com/@stareon");
+}
+</script>
+
+</body>
+</html>
