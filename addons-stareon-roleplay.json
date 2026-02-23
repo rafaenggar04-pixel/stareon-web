@@ -1,0 +1,32 @@
+{
+  "addonName": "Stareon Roleplay Jobs Addon",
+  "version": "1.0.0",
+  "game": "Minecraft Bedrock",
+  "features": {
+    "jobs": [
+      {"id": "police", "name": "Polisi", "salary": 350, "duty": "Patroli kota, menangkap kriminal"},
+      {"id": "doctor", "name": "Dokter", "salary": 300, "duty": "Menyembuhkan pemain di rumah sakit"},
+      {"id": "mechanic", "name": "Mekanik", "salary": 280, "duty": "Memperbaiki kendaraan roleplay"},
+      {"id": "chef", "name": "Chef", "salary": 240, "duty": "Membuat makanan untuk buff stamina"},
+      {"id": "taxi", "name": "Supir Taksi", "salary": 220, "duty": "Mengantar pemain antar distrik"}
+    ],
+    "economy": {
+      "currency": "StareCoin",
+      "dailyBonus": 150,
+      "bank": true
+    },
+    "commands": [
+      "/job list",
+      "/job join <id>",
+      "/job quit",
+      "/salary claim",
+      "/city help"
+    ]
+  },
+  "install": [
+    "1. Download file addon ini.",
+    "2. Import ke world/resource pack Minecraft Bedrock.",
+    "3. Aktifkan Script API dan Education toggle jika diperlukan.",
+    "4. Jalankan /job list untuk melihat daftar pekerjaan."
+  ]
+}
