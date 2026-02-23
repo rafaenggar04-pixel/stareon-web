@@ -31,8 +31,9 @@ nav {
   z-index: 1000;
 }
 
-nav h1 {
-  color: #3ea6ff;
+nav .logo {
+  height: 44px;
+  width: auto;
 }
 
 nav a {
@@ -119,6 +120,41 @@ section h3 {
   border-color: #3ea6ff;
 }
 
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(62, 166, 255, 0.2);
+  color: #7ec8ff;
+  font-size: 13px;
+}
+
+.job-list {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.job-item {
+  background: #071126;
+  border: 1px solid #1a315d;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.job-item h4 {
+  margin-bottom: 6px;
+  color: #9dd8ff;
+}
+
+.job-item p {
+  font-size: 14px;
+  opacity: 0.92;
+}
+
 /* MEMBER */
 .member {
   background: #020617;
@@ -146,7 +182,7 @@ footer {
 <body>
 
 <nav>
-  <h1>STAREON</h1>
+  <img src="./assets/stareon-logo.svg" alt="Stareon Community Logo" class="logo">
   <div>
     <a href="#about">About</a>
     <a href="#roleplay">Roleplay</a>
@@ -199,6 +235,16 @@ footer {
       <p>Leaderboard pemain terkuat dan terkaya.</p>
     </div>
   </div>
+</section>
+
+<section id="addon">
+  <h3>Addon Roleplay: Job & Economy</h3>
+  <p>
+    Sekarang tersedia file addon roleplay untuk sistem pekerjaan, gaji, dan ekonomi.
+    Pilih job favoritmu, claim salary, lalu bangun reputasi di kota Stareon.
+  </p>
+  <button class="btn" onclick="downloadAddon()">Download File Addon</button>
+  <div id="jobList" class="job-list"></div>
 </section>
 
 <section id="member">
@@ -255,6 +301,30 @@ function openTT(){
 function openIG(){
   window.open("https://instagram.com/@stareon");
 }
+
+function downloadAddon(){
+  window.open("./addons-stareon-roleplay.json", "_blank");
+}
+
+async function loadAddonJobs(){
+  const container = document.getElementById("jobList");
+  try {
+    const response = await fetch("./addons-stareon-roleplay.json");
+    const addon = await response.json();
+    const jobs = addon.features.jobs;
+    container.innerHTML = jobs.map((job) => `
+      <div class="job-item">
+        <h4>${job.name}</h4>
+        <p>${job.duty}</p>
+        <span class="badge">Gaji: ${job.salary} StareCoin</span>
+      </div>
+    `).join("");
+  } catch (error) {
+    container.innerHTML = "<p>Gagal memuat data job addon.</p>";
+  }
+}
+
+loadAddonJobs();
 </script>
 
 </body>
